@@ -90,9 +90,11 @@
             clear: both;
             line-height: 0;
         }
-        body{
+
+        body {
             background-color: #dfdfdf;
         }
+
         a {
             color: #000;
         }
@@ -105,7 +107,7 @@
             text-decoration: none;
         }
 
-        #text{
+        #text {
             position: fixed;
             top: 0;
             left: 0;
@@ -113,19 +115,85 @@
             height: 50vh;
             overflow-y: auto;
         }
-        .btns{
+
+        .btns {
             position: fixed;
             right: 5px;
             top: 10px;
             display: flex;
             flex-direction: column;
         }
-        .btns button{
+
+        .btns button {
             width: 40px;
             height: 30px;
             font-size: 16px;
             color: #323232;
             margin-bottom: 10px;
+        }
+
+        @keyframes suoxiao {
+            0% {
+                transform: translate(-50%, -50%) scale(1) rotateZ(0);
+            }
+
+            20% {
+                transform: translate(-50%, -50%) scale(1) rotateZ(0);
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            70% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.3) rotateZ(-2640deg);
+            }
+
+            90% {
+                opacity: .5;
+                transform: translate(-50%, -50%) scale(0.3) rotateZ(-2640deg);
+            }
+
+            94% {
+                transform: translate(-50%, -50%) scale(1) rotateZ(-3260deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1) rotateZ(-3240deg);
+            }
+        }
+
+        @keyframes xuanzhuan2 {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateZ(0) scale(0.15);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateZ(-3000deg) scale(0.15);
+            }
+
+            70% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotateZ(-3600deg) scale(1);
+            }
+
+            90% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotateZ(-3600deg) scale(1);
+            }
+
+            94% {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotateZ(-3720deg) scale(0.15);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) rotateZ(-3680deg) scale(0.15);
+            }
         }
     </style>
 </head>
@@ -133,7 +201,7 @@
 <body>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <style id="style">
-        
+
     </style>
     <div class="layout-eye">
         <div id="text">
@@ -167,17 +235,17 @@
     <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
         resetrem();
-        function resetrem(){
+        function resetrem() {
             var html = document.querySelector("html");//获取到html元素
             var width = html.getBoundingClientRect().width;//获取屏幕的宽度
-            html.style.fontSize = width/80+"px";
+            html.style.fontSize = width / 80 + "px";
         }
         //切换屏幕 （横屏竖屏）
         window.addEventListener("orientationchange", resetrem);
         //resize：屏幕的大小发生改变就触发监听事件resetrem
-        window.addEventListener("resize",resetrem);
+        window.addEventListener("resize", resetrem);
 
-        
+
     </script>
     <script src="main.js"></script>
 </body>
