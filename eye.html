@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .clear {
+            margin: 0px;
+            padding: 0px;
+            clear: both;
+        }
+
+        .clear-fix {
+            *overflow: hidden;
+            *zoom: 1;
+        }
+
+        .clear-fix:after {
+            display: table;
+            content: "";
+            width: 0;
+            clear: both;
+        }
+
+        html,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        h1,
+        h2,
+        h3,
+        pre,
+        form,
+        label,
+        fieldset,
+        textarea,
+        p,
+        blockquote,
+        table,
+        input {
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            font: 14px Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, Tahoma, Arial, sans-serif;
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        code,
+        em,
+        var,
+        i,
+        b {
+            font-style: normal;
+        }
+
+        ul {
+            list-style: none
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            /*height:50px; line-height:50px; */
+            z-index: 10;
+        }
+
+        .clearfloat {
+            height: 0;
+            font-size: 1px;
+            clear: both;
+            line-height: 0;
+        }
+        body{
+            background-color: #dfdfdf;
+        }
+        a {
+            color: #000;
+        }
+
+        span:hover {
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #text{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50vh;
+            overflow-y: auto;
+        }
+        .btns{
+            position: fixed;
+            right: 5px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .btns button{
+            width: 40px;
+            height: 30px;
+            font-size: 16px;
+            color: #323232;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style id="style">
+        
+    </style>
+    <div class="layout-eye">
+        <div id="text">
+
+        </div>
+        <div class="eye">
+            <div class="in1">
+                <div class="in2" style="">
+                    <div class="in3"></div>
+                    <span class="s1"></span>
+                    <span class="s2"></span>
+                    <span class="s3"></span>
+                </div>
+                <div class="ot2" style="">
+                    <span></span>
+                    <div class="otin"></div>
+                    <div class="ots ot3"></div>
+                    <div class="ots ot4"></div>
+                    <div class="ots ot5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="btns">
+            <button id="pause">暂停</button>
+            <button id="play">播放</button>
+            <button id="slow">慢速</button>
+            <button id="normal">中速</button>
+            <button id="fast">快速</button>
+        </div>
+    </div>
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        resetrem();
+        function resetrem(){
+            var html = document.querySelector("html");//获取到html元素
+            var width = html.getBoundingClientRect().width;//获取屏幕的宽度
+            html.style.fontSize = width/80+"px";
+        }
+        //切换屏幕 （横屏竖屏）
+        window.addEventListener("orientationchange", resetrem);
+        //resize：屏幕的大小发生改变就触发监听事件resetrem
+        window.addEventListener("resize",resetrem);
+
+        
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
