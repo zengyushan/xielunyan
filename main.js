@@ -171,7 +171,7 @@ const stylecss = `
 }
 .ot2{
 
-    transform: scale(0.15); 
+    transform: translate(-50%,-50%) scale(0.15); 
 }
 .in2 {
     animation:suoxiao 4s ease-in infinite;
